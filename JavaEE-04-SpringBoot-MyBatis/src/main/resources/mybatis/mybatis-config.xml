@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+
+<configuration>
+
+<!--    类型别名-->
+    <typeAliases>
+        <typeAlias type="java.lang.Long" alias="Long" />
+        <typeAlias type="java.lang.String" alias="String" />
+        <typeAlias type="java.util.Date" alias="Date" />
+        <typeAlias type="edu.bjtu.sse.djd.demo.model.Homework" alias="Homework" />
+        <typeAlias type="edu.bjtu.sse.djd.demo.model.Student" alias="Student" />
+        <typeAlias type="edu.bjtu.sse.djd.demo.model.StudentHomework" alias="StudentHomework" />
+    </typeAliases>
+
+<!--    mapper 路径-->
+    <mappers>
+        <mapper resource="mybatis/mapper/HomeworkMapper.xml"/>
+        <mapper resource="mybatis/mapper/StudentMapper.xml"/>
+        <mapper resource="mybatis/mapper/StudentHomeworkMapper.xml"/>
+<!--        <package name="mybatis/mapper"/>-->
+    </mappers>
+
+</configuration>

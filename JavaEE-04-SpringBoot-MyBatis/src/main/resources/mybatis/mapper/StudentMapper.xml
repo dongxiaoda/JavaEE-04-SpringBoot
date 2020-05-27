@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.bjtu.sse.djd.demo.mapper.StudentMapper" >
+    <resultMap id="studentResultMap" type="edu.bjtu.sse.djd.demo.model.Student">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="creat_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="studentColumn">
+        id, name, create_time, update_time
+    </sql>
+
+    <select id="findAll" resultMap="studentResultMap">
+        SELECT <include refid="studentColumn"/>
+        FROM s_student
+    </select>
+
+</mapper>

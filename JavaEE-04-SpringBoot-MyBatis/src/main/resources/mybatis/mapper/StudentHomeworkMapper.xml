@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.bjtu.sse.djd.demo.mapper.StudentHomeworkMapper" >
+    <resultMap id="studentHomeworkResultMap" type="edu.bjtu.sse.djd.demo.model.StudentHomework">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="student_id" property="studentId" jdbcType="BIGINT"/>
+        <result column="homework_id" property="homeworkId" jdbcType="BIGINT"/>
+        <result column="homework_title" property="homeworkTitle" jdbcType="VARCHAR"/>
+        <result column="homework_content" property="homeworkContent" jdbcType="VARCHAR"/>
+        <result column="creat_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="studentHomeworkColumn">
+        id, student_id, homework_id, homework_title, homework_content, create_time, update_time
+    </sql>
+
+    <select id="findAll" resultMap="studentHomeworkResultMap">
+        SELECT <include refid="studentHomeworkColumn"/>
+        FROM s_student_homework
+    </select>
+
+</mapper>
